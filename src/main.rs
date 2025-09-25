@@ -4,7 +4,7 @@ use rppal::gpio::Gpio;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
    let gpio = Gpio::new()?;
-   let mut pin = gpio.get(17).into_output();
+   let mut pin = gpio.get(17)?.into_output();
 
 
    for i in 0..=10{
