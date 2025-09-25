@@ -2,13 +2,17 @@ use std::{thread::sleep, time::Duration};
 
 use rppal::gpio::Gpio;
 
-fn main() {
-   let gpio = Gpio::new().expect("error reaching GPIO");
-   let mut pin = gpio.get(17)?.into_output();
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+   let gpio = Gpio::new()?;
+   let mut pin = gpio.get(17).into_output();
+
+
    for i in 0..=10{
     pin.set_high();
     sleep(Duration::from_millis(500));
     pin.set_low();
     sleep(Duration::from_millis(500));
    }
+
+   Ok(())
 }
