@@ -6,7 +6,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
    let gpio = Gpio::new()?;
    let mut pin = gpio.get(18)?.into_output();
 
-
+   
    for _ in 0..=10{
     pin.set_high();
     sleep(Duration::from_millis(500));
