@@ -1,10 +1,10 @@
 use std::{thread::sleep, time::Duration};
 
 use rppal::gpio::Gpio;
-// pin used: 17 
+// pin used: 18
 fn main() -> Result<(), Box<dyn std::error::Error>> {
    let gpio = Gpio::new()?;
-   let mut pin = gpio.get(17)?.into_output();
+   let mut pin = gpio.get(18)?.into_output();
 
 
    for _ in 0..=10{

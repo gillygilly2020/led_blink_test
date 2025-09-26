@@ -1,6 +1,6 @@
 use std::{thread::sleep, time::Duration};
 
-use rppal::gpio::Gpio;
+
 use rppal::pwm::{Pwm, Channel, Polarity};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
